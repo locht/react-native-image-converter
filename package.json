@@ -2,7 +2,7 @@
   "name": "react-native-image-converter",
   "version": "5.1.2",
   "description": "test",
-  "main": "lib/commonjs/index",
+  "main": "src/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index",
