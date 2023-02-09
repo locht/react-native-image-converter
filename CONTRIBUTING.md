@@ -53,7 +53,7 @@ Remember to add tests for your change if possible. Run the unit tests by:
 yarn test
 ```
 
-To edit the Objective-C or Swift files, open `example/ios/ImageConverterExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-image-converter`.
+To edit the Objective-C or Swift files, open `example/ios/RNImageConverterExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-image-converter`.
 
 To edit the Java or Kotlin files, open `example/android` in Android studio and find the source files at `react-native-image-converter` under `Android`.
 

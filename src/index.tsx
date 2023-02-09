@@ -6,8 +6,8 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const ImageConverter = NativeModules.ImageConverter
-  ? NativeModules.ImageConverter
+const RNImageConverter = NativeModules.RNImageConverter
+  ? NativeModules.RNImageConverter
   : new Proxy(
       {},
       {
@@ -18,5 +18,5 @@ const ImageConverter = NativeModules.ImageConverter
     );
 
 export function multiply(a: number, b: number): Promise<number> {
-  return ImageConverter.multiply(a, b);
+  return RNImageConverter.multiply(a, b);
 }

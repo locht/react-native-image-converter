@@ -1,31 +1,123 @@
 # react-native-image-converter
 
-'test'
+A React-native module it can modify an image by simply.
 
-## Installation
+### supported features.
 
-```sh
-npm install react-native-image-converter
+-   resize
+-   quality
+-   grayscale
+-   base64 encoding
+
+### latest version
+
+-   0.4.1
+
+## install
+
+-   React Native >= 0.60
+
+```
+yarn add https://github.com/locht/react-native-image-converter.git
+cd ios && pod install
 ```
 
-## Usage
+-   React Native <= 0.59
 
-```js
-import { multiply } from 'react-native-image-converter';
-
-// ...
-
-const result = await multiply(3, 7);
+```
+yarn add react-native-image-converter
+react-native link react-native-image-converter
 ```
 
-## Contributing
+## usage
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+```javascript
+import IImageConverter from 'react-native-image-converter'
+...
+const param = {
+        path: uri,
+        grayscale: false, // or true
+        base64: false, // or true
+        resizeRatio: 0.8, // 1.0 is origin value
+        imageQuality: 0.7 // 1.0 is max quality value
+      }
 
-## License
+const { success, errorMsg, imageURI, base64String } = await IImageConverter.convert(param)
+```
 
-MIT
+## request param
 
----
+#### path - required value
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+-   type : string
+-   description : The absolute path of the local file. (URI)
+
+#### grayscale - optional value (default value is false)
+
+-   type : boolean
+-   description : If you want to make to grayscale, set true.
+
+#### base64 - optional value (default value is false)
+
+-   type : boolean
+-   description : If you want to get image data by base64 encoding, set true.
+
+#### resizeRatio - optional value (default value is 1.0)
+
+-   type : float
+-   description : Image resize ratio, between 0.1 to 1.0.
+
+#### imageQuality - optional value (default value is 1.0)
+
+-   type : float
+-   description : Image quality, between 0.1 to 1.0.
+
+## response value
+
+#### success
+
+-   type : boolean
+-   description : success(true) or failure(false).
+
+#### errorMsg
+
+-   type : string
+-   description : the message of errors.
+
+#### imageURI
+
+-   type : string
+-   description : The absolute path of the edited file. (URI)
+
+#### base64String
+
+-   type : string
+-   description : base64 encoded text data.
+
+## setting the module to the project.
+
+### ios
+
+-   In the Xcode, in the project navigator and right click `Libraries` -> Add Files to `your project name`
+-   Go to `node_modules` -> `react-native-image-converter` and add `RNImageConverter.xcodeproj`
+-   In the Xcode, in the project navigator and select your project. Add `libRNImageConverter.a` to your project's `Build Phases` -> `Link Binary With Libraries`
+-   Build & run your project
+
+### android
+
+-   Open `android/app/src/main/java/your project name/MainApplication.java`
+-   Add `import me.phoboslabs.RNImageConverterPackage;` to the imports line
+-   Add `new RNImageConverterPackage()` to the list of the `getPackages()` method
+
+-   Insert to the `android/settings.gradle`
+
+    ```
+    include ':react-native-image-converter'
+    project(':react-native-image-converter').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-image-converter/android')
+    ```
+
+-   Insert the line of dependencies block in `android/app/build.gradle`
+
+    ```
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    ```
