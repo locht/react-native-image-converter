@@ -11,7 +11,7 @@ A React-native module it can modify an image by simply.
 
 ### latest version
 
--   0.4.1
+-   5.1.2
 
 ## install
 
