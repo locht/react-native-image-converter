@@ -25,7 +25,7 @@ cd ios && pod install
 -   React Native <= 0.59
 
 ```
-yarn add react-native-image-converter
+yarn add https://github.com/locht/react-native-image-converter.git
 react-native link react-native-image-converter
 ```
 
