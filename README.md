@@ -96,26 +96,7 @@ const { success, errorMsg, imageURI, base64String } = await IImageConverter.conv
 
 ## setting the module to the project.
 
-### ios
-
--   In the Xcode, in the project navigator and right click `Libraries` -> Add Files to `your project name`
--   Go to `node_modules` -> `react-native-image-converter` and add `RNImageConverter.xcodeproj`
--   In the Xcode, in the project navigator and select your project. Add `libRNImageConverter.a` to your project's `Build Phases` -> `Link Binary With Libraries`
--   Build & run your project
-
 ### android
-
--   Open `android/app/src/main/java/your project name/MainApplication.java`
--   Add `import me.phoboslabs.RNImageConverterPackage;` to the imports line
--   Add `new RNImageConverterPackage()` to the list of the `getPackages()` method
-
--   Insert to the `android/settings.gradle`
-
-    ```
-    include ':react-native-image-converter'
-    project(':react-native-image-converter').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-image-converter/android')
-    ```
-
 -   Insert the line of dependencies block in `android/app/build.gradle`
 
     ```
