@@ -147,7 +147,7 @@ RCT_EXPORT_METHOD(imageConvert:(NSDictionary *) params
 
     //  Edit code camera rotate
     //  UIImage *newImage = [UIImage imageWithCGImage:imageRef];
-    UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:-90];
+    UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:0];
     //  End Edit
     CGColorSpaceRelease(colorSpace);
     CGContextRelease(context);
